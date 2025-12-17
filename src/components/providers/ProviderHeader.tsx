@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Provider } from '../../types/provider'
 import { FaCheckCircle } from 'react-icons/fa'
 

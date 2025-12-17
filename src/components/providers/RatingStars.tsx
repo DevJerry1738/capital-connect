@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
 
 export default function RatingStars({ value }: { value?: number }) {
