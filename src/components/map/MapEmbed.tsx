@@ -1,6 +1,18 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+// Ensure Leaflet's default marker images resolve correctly when bundled (Vercel / static hosts)
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
+import markerIcon from 'leaflet/dist/images/marker-icon.png'
+import markerShadow from 'leaflet/dist/images/marker-shadow.png'
+
+// Merge default icon options so the images are referenced via the bundler imports
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+})
+
 import type { Provider } from '../../types/provider'
 
 type Props = { providers: Provider[] }
