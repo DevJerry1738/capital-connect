@@ -408,6 +408,15 @@ h2 {
   display: flex;
   gap: var(--space-sm);
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn.btn-outline-2 {
+  flex: 1;
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  border: 1px solid #e6eef6;
 }
 
 .provider-aside .card {
@@ -472,10 +481,11 @@ h2 {
   gap: 8px;
   padding: 10px 14px;
   border-radius: 8px;
-  font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
+  width: 100%;
+  justify-content: center;
 }
 .btn:focus {
   outline: none;
@@ -514,6 +524,7 @@ h2 {
   display: flex;
   gap: var(--space-sm);
   align-items: center;
+  justify-content: center;
 }
 .contact-actions .btn {
   display: inline-flex;
@@ -530,6 +541,7 @@ h2 {
   }
   .sticky-cta {
     display: flex;
+    flex-direction: column;
     position: fixed;
     left: 0;
     right: 0;
@@ -541,7 +553,18 @@ h2 {
     border-top: 1px solid #eef2f7;
     z-index: 1000;
     box-shadow: 0 -6px 20px rgba(2, 6, 23, 0.06);
+    align-items: center;
   }
+  /* .sticky-cta .btn { flex: 1 1 auto; min-width: 0; } */
+  .sticky-cta .contact-actions { display: flex; gap: 8px; flex: 1 1 auto; }
+  .sticky-cta .contact-actions .btn { flex: 1 1 auto; }
+  .btn .btn-outline-2 {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(248, 247, 247);
+    justify-content: center;
+  }
+
   .provider-page {
     padding-bottom: 140px; /* ensure page content is not obscured by sticky CTA */
   }
@@ -560,6 +583,43 @@ h2 {
 /* Map */
 .map-section {
   margin-top: var(--space-lg);
+}
+.leaflet-map { overflow: hidden; }
+.leaflet-popup .get-directions {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Toasts */
+.toast-root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 92px; /* above sticky CTA */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 1100;
+}
+.toast {
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.95);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+  max-width: 720px;
+  width: calc(100% - 32px);
+  font-weight: 600;
+  text-align: center;
+}
+@media (min-width: 901px) {
+  .toast { width: auto; }
 }
 
 /* Providers list */
