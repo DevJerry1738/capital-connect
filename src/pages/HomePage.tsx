@@ -87,6 +87,15 @@ export default function HomePage() {
           <MapEmbed providers={providers} />
         </section>
 
+        {/* Onboarding CTA: invite new providers to list their services */}
+        {/* <section className="onboard-section">
+          <div className="card onboard-card">
+            <h2>Are you a local service provider?</h2>
+            <p className="muted">Join Capital Connect to reach customers across Abuja. Listing is quick and free.</p>
+            <a className="btn btn-primary" href="mailto:hello@capitalconnect.ng">List your service</a>
+          </div>
+        </section> */}
+
         {/* Removed exhaustive providers list from Home: discovery-focused layout only */}
 
         <FAQSection items={faqs} />

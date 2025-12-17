@@ -257,6 +257,17 @@ h2 {
   display: flex;
   gap: var(--space-md);
   align-items: flex-start;
+  flex-wrap: wrap; /* allow children to wrap instead of overflowing */
+}
+.hero .filters {
+  flex: 0 1 auto; /* allow filters to shrink on narrower widths */
+  min-width: 0;
+}
+.hero .filters select {
+  max-width: 220px;
+}
+.hero .filters input {
+  max-width: 220px;
 }
 .hero .searchbar {
   flex: 1;

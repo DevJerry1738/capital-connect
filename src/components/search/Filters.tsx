@@ -1,4 +1,6 @@
 
+import './Filters.css'
+
 export default function Filters({
   category,
   setCategory,

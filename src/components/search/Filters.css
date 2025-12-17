@@ -1,0 +1,14 @@
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.filters label { display:flex; gap:8px; align-items:center; }
+.filters select, .filters input { padding: 10px 12px; border-radius: 8px; border: 1px solid #e6eef6; background: white; box-sizing: border-box; }
+.filters select { min-width: 120px; }
+
+@media (min-width: 901px) {
+  .filters { gap: var(--space-sm); }
+}

@@ -1,18 +1,7 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-// Ensure Leaflet's default marker images resolve correctly when bundled (Vercel / static hosts)
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
-import markerIcon from 'leaflet/dist/images/marker-icon.png'
-import markerShadow from 'leaflet/dist/images/marker-shadow.png'
-
-// Merge default icon options so the images are referenced via the bundler imports
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-})
-
+import { DefaultIcon } from './leafletIcons'
 import type { Provider } from '../../types/provider'
 
 type Props = { providers: Provider[] }
@@ -43,8 +32,13 @@ export default function MapEmbed({ providers }: Props) {
       // clear previous markers
       markersRef.current.clearLayers()
 
+     
+
       providers.forEach((p) => {
-        const marker = L.marker([p.lat, p.lng])
+        const marker = L.marker([p.lat, p.lng], { icon: DefaultIcon })
+        // debug: confirm marker icon url
+        // eslint-disable-next-line no-console
+        console.debug('adding marker', p.id, (DefaultIcon.options && (DefaultIcon.options as any).iconUrl) || (L.Icon.Default.prototype.options && (L.Icon.Default.prototype.options as any).iconUrl))
         const popup = `<strong>${p.name}</strong><br/>${p.category} • ${p.district}<br/><a href="/provider/${p.id}">View details</a>`
         marker.bindPopup(popup)
         markersRef.current!.addLayer(marker)

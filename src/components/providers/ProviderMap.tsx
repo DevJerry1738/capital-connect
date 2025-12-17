@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { DefaultIcon } from '../map/leafletIcons'
 import type { Provider } from '../../types/provider'
 
 export default function ProviderMap({ provider }: { provider: Provider }) {
@@ -17,7 +18,10 @@ export default function ProviderMap({ provider }: { provider: Provider }) {
       mapRef.current.setView([provider.lat, provider.lng], 14)
     }
 
-    const marker = L.marker([provider.lat, provider.lng]).addTo(mapRef.current!)
+    const marker = L.marker([provider.lat, provider.lng], { icon: DefaultIcon }).addTo(mapRef.current!)
+    // debug: ensure the configured icon url is used
+    // eslint-disable-next-line no-console
+    console.debug('provider marker icon', (DefaultIcon.options as any).iconUrl)
     marker.bindPopup(`<strong>${provider.name}</strong><br/>${provider.category}`)
 
     return () => {
