@@ -1,0 +1,10 @@
+.reviews-section { display: grid; gap: 12px; }
+.reviews-header { display:flex; align-items:center; justify-content:space-between; gap:12px }
+.reviews-stats { display:flex; align-items:center; gap:12px }
+.reviews-average { font-size:1.5rem; font-weight:700 }
+.reviews-count { font-size:0.95rem }
+.reviews-list { display:grid; gap:12px; margin-top:6px }
+
+@media (max-width: 640px) {
+  .reviews-header { flex-direction:column; align-items:flex-start }
+}

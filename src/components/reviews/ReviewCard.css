@@ -1,0 +1,14 @@
+.review-card {
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  border: 1px solid #eef2f7;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+  transition: transform 240ms ease, opacity 200ms ease;
+  animation: fadeInUp 320ms ease both;
+}
+.review-top { display:flex; justify-content:space-between; align-items:center; gap:12px }
+.review-author { font-weight: 700; }
+.review-meta { display:flex; gap:8px; align-items:center }
+.review-time { font-size: 0.85rem; color: var(--color-muted); }
+.review-text { margin-top: 8px; color: var(--color-text-secondary); line-height:1.4 }

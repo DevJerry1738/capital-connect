@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ccLogo from '../../assets/cc-logo.webp'
+import './Navbar.css'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

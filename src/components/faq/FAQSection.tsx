@@ -1,5 +1,7 @@
+// src/components/faq/FAQSection.tsx
 import type { FAQ } from '../../types/faq'
 import FAQItem from './FAQItem'
+import './FAQ.css'
 
 export default function FAQSection({ items }: { items: FAQ[] }) {
   return (

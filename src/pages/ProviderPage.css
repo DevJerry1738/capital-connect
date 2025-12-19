@@ -1,0 +1,202 @@
+/* =========================
+   PROVIDER PAGE BASE
+========================= */
+.provider-page {
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+.provider-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.06);
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.provider-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.summary-top {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.avatar.large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-brand);
+  background: linear-gradient(135deg, #eef3ff, #e3ebff);
+  flex-shrink: 0;
+}
+
+.summary-meta {
+  flex: 1;
+}
+
+.provider-name {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.rating-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.rating-stars-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.rating-value {
+  font-weight: 600;
+}
+
+.serving {
+  color: var(--color-muted);
+}
+
+.desc {
+  margin-top: var(--space-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+.summary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.summary-actions .btn {
+  width: 100%;
+}
+
+/* =========================
+   ASIDE
+========================= */
+.provider-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.map-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews-card {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   STICKY CTA (MOBILE ONLY)
+========================= */
+.sticky-cta {
+  display: none;
+}
+
+/* =========================
+   TABLET & MOBILE
+========================= */
+@media (max-width: 900px) {
+  .provider-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-top {
+    align-items: center;
+  }
+
+  .avatar.large {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .summary-actions {
+    display: none;
+  }
+
+  .sticky-cta {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    gap: 10px;
+    padding: 12px;
+    background: var(--color-surface);
+    border-top: 1px solid #eef2f7;
+    box-shadow: 0 -8px 24px rgba(2, 6, 23, 0.08);
+    z-index: 1000;
+  }
+
+  .sticky-cta .btn {
+    flex: 1;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .provider-page {
+    /* padding-bottom: 140px; */
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .provider-name {
+    font-size: 1.15rem;
+  }
+
+  .rating-row {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,24 @@
+.reviews-wrap { display: grid; gap: 16px; }
+.review-form-wrap { padding: 14px; border-radius: 12px; background: var(--color-surface); border: 1px solid #eef2f7 }
+.review-form-wrap h4 { margin: 0 0 8px 0 }
+
+/* Container when rendered as a full-width card beneath the provider summary */
+.reviews-card {
+	margin-top: 16px;
+}
+.reviews-card h3 {
+	margin: 0;
+	font-size: 1.1rem;
+}
+
+/* small card spacing for review list */
+.reviews-list .review-card { margin-bottom: 6px }
+
+/* subtle entrance for new reviews */
+.reviews-list .review-card.new {
+	animation: appear 220ms ease-out;
+}
+@keyframes appear {
+	from { transform: translateY(6px); opacity: 0 }
+	to { transform: translateY(0); opacity: 1 }
+}

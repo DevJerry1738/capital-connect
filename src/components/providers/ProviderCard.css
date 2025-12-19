@@ -1,0 +1,49 @@
+.provider-card {
+  padding: calc(var(--space-sm));
+  border: 1px solid #f1f5f9;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-height: 250px;
+}
+.provider-card:hover {
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+}
+.provider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.provider-name {
+  font-size: 1rem;
+  margin: 0;
+}
+.provider-name a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+.rating {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+.provider-meta {
+  margin-top: auto;
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+.availability {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.availability.open {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+}
+.availability.closed {
+  background: rgba(243, 244, 246, 1);
+  color: var(--color-muted);
+}

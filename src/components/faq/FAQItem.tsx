@@ -1,5 +1,7 @@
+// src/components/faq/FAQItem.tsx
 import  { useState, useRef, useEffect } from 'react'
 import type { FAQ } from '../../types/faq'
+import './FAQ.css'
 
 export default function FAQItem({ faq }: { faq: FAQ }) {
   const [open, setOpen] = useState(false)

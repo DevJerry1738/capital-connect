@@ -1,5 +1,6 @@
-import type { Provider } from '../../types/provider'
-import { FaTag, FaMapMarkerAlt, FaCheckCircle, FaClock } from 'react-icons/fa'
+import type { Provider } from "../../types/provider";
+import { FaTag, FaMapMarkerAlt, FaCheckCircle, FaClock } from "react-icons/fa";
+import "./ProviderDetails.css";
 
 export default function ProviderDetails({ provider }: { provider: Provider }) {
   return (
@@ -18,14 +19,18 @@ export default function ProviderDetails({ provider }: { provider: Provider }) {
         <li>
           <FaClock className="icon" />
           <strong>Availability</strong>
-          <span>{provider.availability ? 'Available' : 'Busy'}</span>
+          <span className={provider.availability ? "success" : "warning"}>
+            {provider.availability ? "Available" : "Busy"}
+          </span>
         </li>
         <li>
           <FaCheckCircle className="icon" />
           <strong>Verification</strong>
-          <span>{provider.verified ? 'Verified' : 'Unverified'}</span>
+          <span className={provider.verified ? "verified" : "unverified"}>
+            {provider.verified ? "Verified" : "Unverified"}
+          </span>
         </li>
       </ul>
     </div>
-  )
+  );
 }

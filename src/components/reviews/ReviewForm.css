@@ -1,0 +1,12 @@
+.review-form { display: grid; gap: 12px; }
+.review-form .form-row { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: start; }
+.review-form .label { font-weight: 600; color: var(--color-text); }
+.review-form textarea { width: 100%; min-height: 88px; padding: 10px; border-radius: 8px; border: 1px solid #eef2f7; resize: vertical; font-size: 0.98rem; }
+.review-form .form-meta { display:flex; justify-content:space-between; align-items:center; margin-top:8px }
+.review-form .form-meta .muted { color: var(--color-muted); font-size: 0.9rem ; margin-right: 10px;}
+.review-form .form-error { color: #b91c1c; font-weight: 600; margin-top: 6px }
+
+@media (max-width: 640px) {
+  .review-form .form-row { grid-template-columns: 1fr; }
+  .review-form .label { margin-bottom: 6px }
+}

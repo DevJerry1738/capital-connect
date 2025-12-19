@@ -2,6 +2,7 @@ import type { Provider } from '../../types/provider'
 import VerifiedBadge from './VerifiedBadge'
 import { Link } from 'react-router-dom'
 import { FaStar } from 'react-icons/fa'
+import './ProviderCard.css'
 
 export default function ProviderCard({ provider }: { provider: Provider }) {
   return (
